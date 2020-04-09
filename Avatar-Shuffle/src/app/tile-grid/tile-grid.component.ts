@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AvatarService } from '../avatar.service';
+import { Avatar } from '../avatar.model';
 
 @Component({
   selector: 'app-tile-grid',
@@ -7,9 +9,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TileGridComponent implements OnInit {
 
-  constructor() { }
+  avatarArr: string[] = new Array();
+  
+
+  constructor(private avatarService: AvatarService) { }
 
   ngOnInit(): void {
+
+    for(let i=0; i<12; i++){
+      this.populateAvatars();
+    };
+
   }
+
+  populateAvatars(){
+
+      this.avatarService.getAvatar().subscribe((res)=>{
+
+      let response: any = res;
+      let avatarImage: string = response.sprites.front_default;
+
+      this.avatarArr.push(avatarImage);
+
+      });
+
+}
 
 }

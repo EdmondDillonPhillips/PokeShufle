@@ -1,2 +1,5 @@
 <p>tile-grid works!</p>
-<app-avatar-tile></app-avatar-tile>
+
+<div *ngFor="let avatar of avatarArr">
+    <app-avatar-tile [avatar]="avatar"></app-avatar-tile>
+</div>
