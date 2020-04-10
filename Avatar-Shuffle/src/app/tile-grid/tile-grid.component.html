@@ -1,1 +1,10 @@
-<p>tile-grid works!</p>
+<div class="wrapper">
+    <div *ngFor="let avatar of avatarArr">
+        <div>
+            <app-avatar-tile class="tile" [avatar]="avatar" [backgroundColor]="generateRandomColor()"></app-avatar-tile>
+        </div>
+        
+    </div>
+</div>
+
+
