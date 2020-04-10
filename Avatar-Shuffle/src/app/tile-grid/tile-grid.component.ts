@@ -10,14 +10,17 @@ import { Avatar } from '../avatar.model';
 export class TileGridComponent implements OnInit {
 
   avatarArr: string[] = new Array();
+  backgroundColor: string = "black";
+  colorsArr: string[] = new Array('red', 'blue', 'green', 'yellow', 'orange');
   
 
   constructor(private avatarService: AvatarService) { }
 
   ngOnInit(): void {
 
-    for(let i=0; i<12; i++){
+    for(let i=0; i<9; i++){
       this.populateAvatars();
+      this.generateRandomColor();
     };
 
   }
@@ -34,5 +37,13 @@ export class TileGridComponent implements OnInit {
       });
 
 }
+
+  generateRandomColor(){
+
+    let randomNumber = Math.round(Math.random()*4);
+
+    return this.colorsArr[randomNumber];
+
+  }
 
 }

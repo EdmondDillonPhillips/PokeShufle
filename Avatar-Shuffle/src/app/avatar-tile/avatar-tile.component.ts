@@ -11,6 +11,7 @@ import { Avatar } from '../avatar.model';
 export class AvatarTileComponent implements OnInit {
 
   @Input() avatar: Avatar;
+  @Input() backgroundColor: string;
 
   constructor(private avatarService: AvatarService) { }
 

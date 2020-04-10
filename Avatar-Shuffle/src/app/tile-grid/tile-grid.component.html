@@ -1,3 +1,10 @@
-<div *ngFor="let avatar of avatarArr">
-    <app-avatar-tile [avatar]="avatar"></app-avatar-tile>
+<div class="wrapper">
+    <div *ngFor="let avatar of avatarArr">
+        <div>
+            <app-avatar-tile class="tile" [avatar]="avatar" [backgroundColor]="generateRandomColor()"></app-avatar-tile>
+        </div>
+        
+    </div>
 </div>
+
+
